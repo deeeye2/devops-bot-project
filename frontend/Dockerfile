@@ -1,21 +1,22 @@
+# Use an official Node.js runtime as a parent image
 FROM node:14
 
-# Set working directory
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
 # Install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Build the application
+# Copy the rest of the application code
 COPY . .
+
+# Build the frontend application
 RUN npm run build
 
-# Expose port
-EXPOSE 3000
-
-# Use a Node.js web server to serve the frontend (could also use nginx)
+# Serve the frontend application
 RUN npm install -g serve
 CMD ["serve", "-s", "build"]
+
+# Expose the port the app runs on
+EXPOSE 3000
