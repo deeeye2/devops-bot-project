@@ -1,169 +1,161 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #495867;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #495867;
-    color: white;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header {
-    background: url('path-to-galaxy-image.jpg') no-repeat center center;
+    width: 100%;
+    height: 20vh; /* Header height set to 10% of the viewport height */
+    background: url('header.jpg') no-repeat center center;
     background-size: cover;
-    padding: 10px;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: yellow; /* Yellow background for header */
 }
 
-.header img {
-    height: 100px;
+.header-image {
+    height: 50px;
 }
 
 .login-form {
     position: absolute;
     top: 10px;
     right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login-form h2, .login-form label, .login-form a {
     color: green;
 }
 
 .content {
     display: flex;
+    width: 100%;
     justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    flex: 1;
+    text-align: right;
+    width: 80%;
+}
+
+.logo img {
+    width: 40%;
+    height: auto;
+}
+
+.form-container {
+    flex: 1;
+    text-align: left;
 }
 
 .register-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 5px;
+    
 }
 
 .contact-form, .calendar, .time {
-    width: 45%;
-    margin: 20px auto;
+    margin-top: 20px;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    width: 80%;
+    background-color: #BFA89E;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #333;
+}
+
+.contact-form, .calendar {
+    width: 300px;
+    padding: 10px;
 }
 
 .contact-form {
     background-color: yellow;
+    border-radius: 10px;
 }
 
 .calendar {
     background-color: greenpink;
+    border-radius: 10px;
 }
 
 .footer {
-    background-color: black;
-    color: gold;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.marquee {
+    background-color: #332222;
+    color: #fff;
     padding: 10px 0;
     text-align: center;
-}
-
-.scrolling-text {
-    font-size: 1.2em;
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.scrolling-text p {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 15s linear infinite;
-}
-
-@keyframes marquee {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-}
-/* Existing styles */
-
-/* Dashboard styles */
-body.dashboard-body {
-    background-color: black;
-    color: gold;
-    font-family: Arial, sans-serif;
-}
-
-.dashboard-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.dashboard-header h1 {
-    margin: 0;
-    color: gold;
-}
-
-.dashboard-header button {
-    background-color: gold;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.dashboard-content {
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
     margin-top: 20px;
 }
 
-.cli-section, .problem-section, .profile-section {
+.contact-form form, .calendar div {
+    width: 200px;
+    max-width: 100%;
+}
+
+.contact-form input, .contact-form textarea, .calendar input, .calendar textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact-form button, .calendar button {
+    width: 100%;
+    padding: 10px;
+    border: none;
     background-color: #222;
-    padding: 20px;
+    color: #fff;
     border-radius: 5px;
-    width: 30%;
-}
-
-.cli-section h2, .problem-section h2, .profile-section h2 {
-    color: gold;
-}
-
-.cli-section form, .problem-section form {
-    display: flex;
-    flex-direction: column;
-}
-
-.cli-section form input, .problem-section form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.cli-section form button, .problem-section form button {
-    background-color: gold;
-    color: black;
-    border: none;
-    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-#cliOutput {
-    background-color: #111;
+.contact-form button:hover, .calendar button:hover {
+    background-color: #222;
+}
+
+.time {
+    text-align: center;
+    margin-top: 10px;
+    background-color: #BFA89E;
     padding: 10px;
     border-radius: 5px;
-    margin-top: 10px;
-    color: white;
+    width: 200px;
 }
-
