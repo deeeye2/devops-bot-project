@@ -1,1 +1,11 @@
+version: '3'
+services:
+  frontend:
+    image: deeeye2/devops-bot-frontend:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - devops-net
 
+networks:
+  devops-net:
