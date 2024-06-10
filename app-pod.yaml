@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-bot-app
+spec:
+  containers:
+  - name: frontend
+    image: deeeye2/devops-bot-frontend:latest
+    ports:
+    - containerPort: 3000
+  - name: backend
+    image: deeeye2/devops-bot-backend:latest
+    ports:
+    - containerPort: 5000
+    volumeMounts:
+    - name: uploads
+      mountPath: /usr/src/app/uploads
+    - name: database
+      mountPath: /usr/src/app/new_problems_solutions.db
+  volumes:
+  - name: uploads
+    hostPath:
+      path: /opt/docker/uploads
+  - name: database
+    hostPath:
+      path: /opt/docker/new_problems_solutions.db
