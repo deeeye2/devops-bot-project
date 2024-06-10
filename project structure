@@ -1,0 +1,32 @@
+project-root/
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── public/
+│   │   ├── index.html
+│   │   └── styles.css
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── ...
+│   ├── package.json
+│   └── package-lock.json
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── server.js
+│   ├── init_db.sql
+│   ├── package.json
+│   ├── package-lock.json
+│   └── ...
+│
+├── kubernetes/
+│   ├── frontend-deployment.yaml
+│   ├── frontend-service.yaml
+│   ├── backend-deployment.yaml
+│   ├── backend-service.yaml
+│   ├── ingress.yaml (optional)
+│
+├── cleanup.sh
+├── Jenkinsfile
+└── docker-compose.yml
