@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Generate a secret key
+SECRET_KEY=$(openssl rand -hex 32)
+
+# Create .env file
+cat <<EOT > backend/.env
+SECRET_KEY=$SECRET_KEY
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+EOT
+
+echo ".env file created with the generated secret key."
