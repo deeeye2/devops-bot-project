@@ -9,6 +9,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { exec } = require('child_process');
 
 dotenv.config();
 
