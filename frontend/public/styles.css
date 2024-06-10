@@ -1,1 +1,86 @@
-hi
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #495867;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: url('path-to-galaxy-image.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 10px;
+    text-align: right;
+}
+
+.header img {
+    height: 100px;
+}
+
+.login-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: green;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form, .calendar, .time {
+    width: 45%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: yellow;
+}
+
+.calendar {
+    background-color: greenpink;
+}
+
+.footer {
+    background-color: black;
+    color: gold;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.scrolling-text {
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.scrolling-text p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
