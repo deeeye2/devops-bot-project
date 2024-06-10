@@ -1,11 +1,26 @@
 version: '3'
 services:
   frontend:
-    image: deeeye2/devops-bot-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     networks:
       - devops-net
 
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/uploads:/usr/src/app/uploads
+      - ./backend/new_problems_solutions.db:/usr/src/app/new_problems_solutions.db
+    networks:
+      - devops-net
+
 networks:
   devops-net:
+    driver: bridge
