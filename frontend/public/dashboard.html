@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOps Bot Dashboard</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: yellow;
+            padding: 10px;
+            text-align: right;
+        }
+        .header img {
+            height: 50px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: black;
+            color: gold;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .scrolling-text {
+            font-size: 1.2em;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .scrolling-text p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://share.icloud.com/photos/02bMLnttFbPjAHPr8Xp1zavVA" alt="DevOps Bot">
+            <a href="#" id="logoutButton" style="color: green;">Logout</a>
+        </div>
+        <div class="content">
+            <h1>Welcome to the DevOps Bot Dashboard</h1>
+            <div class="cli-section">
+                <h2>Command Line Interface</h2>
+                <form id="cliForm">
+                    <input type="text" id="cliCommand" placeholder="Enter CLI command">
+                    <button type="submit">Execute</button>
+                </form>
+                <pre id="cliOutput"></pre>
+            </div>
+            <div class="problem-submission">
+                <h2>Submit a Problem</h2>
+                <form id="problemForm">
+                    <textarea id="problemDescription" placeholder="Describe your problem"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="user-profile">
+                <h2>User Profile</h2>
+                <pre id="userProfile"></pre>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 DevOps Bot. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="scrolling-text">The purpose of this page is to help DevOps engineers solve DevOps tools problems, like installing, networking, and more. Built by Mohamed Sesay, a DevOps Engineer.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('cliForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const command = document.getElementById('cliCommand').value;
+            // Add CLI execution functionality here
+        });
+
+        document.getElementById('problemForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const problemDescription = document.getElementById('problemDescription').value;
+            // Add problem submission functionality here
+        });
+
+        document.getElementById('logoutButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add logout functionality here
+        });
+
+        // Fetch and display user profile
+        function fetchUserProfile() {
+            // Fetch user profile from the backend and display it
+        }
+
+        fetchUserProfile();
+    </script>
+</body>
+</html>
