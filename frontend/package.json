@@ -7,11 +7,10 @@
     "build": "echo \"Building the frontend...\" && mkdir -p dist && cp -r index.html styles.css dashboard.html dashboard.css app.js dist/"
   },
   "dependencies": {
-    // your dependencies here
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
   },
-  "devDependencies": {
-    // your devDependencies here
-  },
+  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
