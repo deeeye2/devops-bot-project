@@ -1,14 +1,14 @@
 {
   "name": "devops-bot-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for DevOps bot project",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "build": "echo 'Building the frontend...' && mkdir -p dist && cp -r public/* dist/"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1", // Add this line if not present
+    "express": "^4.17.1"
   }
 }
