@@ -10,12 +10,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const jwtSecret = process.env.SECRET_KEY || 'secret';
+const dbPath = process.env.DB_PATH || './new_problems_solutions.db';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Database setup
-const db = new sqlite3.Database('./new_problems_solutions.db', (err) => {
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Database opening error: ', err);
   } else {
@@ -42,6 +43,10 @@ app.post('/api/login', (req, res) => {
 
     res.send({ auth: true, token });
   });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 app.listen(PORT, () => {
