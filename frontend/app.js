@@ -20,7 +20,7 @@ async function login(username, password) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ email: username, password: password }),
   });
 
   const data = await response.json();
@@ -39,4 +39,3 @@ login('admin@example.com', 'admin').catch(console.error);
 app.listen(port, () => {
   console.log(`Frontend server is running on port ${port}`);
 });
-
