@@ -2,15 +2,13 @@
   "name": "devops-bot-frontend",
   "version": "1.0.0",
   "description": "Frontend for DevOps Bot",
-  "main": "public/index.html",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "echo \"Building the frontend...\" && mkdir -p dist && cp -r public/* dist/"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "body-parser": "^1.19.0"
-  },
-  "devDependencies": {},
-  "author": "",
-  "license": "ISC"
+    "express": "^4.17.1"
+  }
 }
