@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "echo 'Building the frontend...' && mkdir -p dist && cp -r public/* dist/"
+    "build": "mkdir -p dist && cp -r public/* dist/"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
