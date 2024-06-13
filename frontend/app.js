@@ -5,13 +5,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static('dist'));
+app.use(express.static('build'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const apiBaseUrl = 'http://backend:5000'; // Use the service name 'backend'
+const apiBaseUrl = 'http://backend:5000';
 
 // Example login function
 async function login(username, password) {
@@ -25,10 +25,8 @@ async function login(username, password) {
 
   const data = await response.json();
   if (response.ok) {
-    // Handle successful login
     console.log('Login successful:', data);
   } else {
-    // Handle login error
     console.error('Login error:', data);
   }
 }
