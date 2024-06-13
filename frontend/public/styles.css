@@ -13,6 +13,9 @@ body {
     align-items: center;
 }
 
+.header-image {
+    height: 10px;
+}
 
 .navbar {
     display: flex;
