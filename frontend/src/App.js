@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
-import { login } from './api';
+
+const apiBaseUrl = 'http://localhost:5001'; // Ensure this URL is correct
+
+async function login(email, password) {
+  const response = await fetch(`${apiBaseUrl}/api/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error('Login failed');
+  }
+}
 
 function App() {
   const [email, setEmail] = useState('');
@@ -36,4 +53,3 @@ function App() {
 }
 
 export default App;
-
