@@ -17,7 +17,7 @@
             <div class="login-form">
                 <h2>Login</h2>
                 <form id="loginForm">
-                    <label for="username">Username</label>
+                    <label for="username">Email</label>
                     <input id="username" name="username" required>
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
@@ -95,32 +95,72 @@
         </marquee>
     </div>
     <script>
-    document.getElementById('loginForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        try {
-            const response = await fetch('http://backend:5000/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: username, password: password }),
-            });
-            
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Login successful:', data);
-                // Redirect to dashboard or another page
-            } else {
-                console.error('Login error:', data);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-</script>
+        document.getElementById('showRegisterForm').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.login-form').style.display = 'none';
+            document.querySelector('.register-form').style.display = 'block';
+        });
 
+        document.getElementById('showLoginForm').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.register-form').style.display = 'none';
+            document.querySelector('.login-form').style.display = 'block';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            try {
+                const response = await fetch('http://backend:5000/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email, password: password }),
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    console.log('Login successful:', data);
+                    // Redirect to dashboard or another page
+                    window.location.href = '/dashboard.html'; // example redirection
+                } else {
+                    console.error('Login error:', data);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add registration functionality here
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add contact form functionality here
+        });
+
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                defaultView: 'month',
+                editable: true,
+                events: []
+            });
+        });
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            var currentTime = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('currentTime').textContent = currentTime;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
