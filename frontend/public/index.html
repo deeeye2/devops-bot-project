@@ -95,25 +95,13 @@
         </marquee>
     </div>
     <script>
-    document.getElementById('showRegisterForm').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('.login-form').style.display = 'none';
-        document.querySelector('.register-form').style.display = 'block';
-    });
-
-    document.getElementById('showLoginForm').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('.register-form').style.display = 'none';
-        document.querySelector('.login-form').style.display = 'block';
-    });
-
     document.getElementById('loginForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
         try {
-            const response = await fetch('http://backend:5001/api/login', {
+            const response = await fetch('http://backend:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -132,59 +120,6 @@
             console.error('Error:', error);
         }
     });
-
-    document.getElementById('registerForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const username = document.getElementById('regUsername').value;
-        const password = document.getElementById('regPassword').value;
-        const name = document.getElementById('name').value;
-        const surname = document.getElementById('surname').value;
-        const email = document.getElementById('email').value;
-        
-        try {
-            const response = await fetch('http://backend:5001/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password, name, surname, email }),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Registration successful:', data);
-                // Show success message or redirect to login
-            } else {
-                console.error('Registration error:', data);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add contact form functionality here
-    });
-
-    $(document).ready(function() {
-        $('#calendar').fullCalendar({
-            defaultView: 'month',
-            editable: true,
-            events: []
-        });
-    });
-
-    function updateTime() {
-        var now = new Date();
-        var hours = now.getHours().toString().padStart(2, '0');
-        var minutes = now.getMinutes().toString().padStart(2, '0');
-        var seconds = now.getSeconds().toString().padStart(2, '0');
-        var currentTime = hours + ':' + minutes + ':' + seconds;
-        document.getElementById('currentTime').textContent = currentTime;
-    }
-
-    setInterval(updateTime, 1000);
 </script>
 
 </body>
