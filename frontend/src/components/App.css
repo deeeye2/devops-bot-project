@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.App form {
+  display: inline-block;
+  text-align: left;
+}
+
+.App div {
+  margin-bottom: 10px;
+}
