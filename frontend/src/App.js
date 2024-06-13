@@ -1,4 +1,4 @@
-const apiBaseUrl = 'http://backend:5000'; // Use the service name 'backend'
+const apiBaseUrl = 'http://backend:5001'; // Use the service name 'backend'
 
 // Example login function
 async function login(username, password) {
