@@ -14,11 +14,40 @@
     <div class="container">
         <div class="header">
             <img src="IMG_2055.png" alt="DevOps Bot" class="header-image">
+            <div class="navbar">
+                <a href="#home">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Portfolio 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#cv">CV</a>
+                        <a href="#certificates">Certificates</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+                </div> 
             </div>
         </div>
-        <div class="content">
-            <div class="logo">
-                <img src="IMG_2055.png" alt="Logo">
+        <div class="bio-section">
+            <img src="your_photo.jpg" alt="Your Photo" class="bio-photo">
+            <div class="bio-text">
+                <h2>Mohamed Sesay</h2>
+                <p>Hello, I am Mohamed Sesay, a DevOps Engineer. The purpose of this page is to help DevOps engineers solve DevOps tools problems like installing, networking, and more.</p>
+            </div>
+        </div>
+        <div class="portfolio" id="portfolio">
+            <h2>Portfolio</h2>
+            <div id="cv">
+                <h3>CV</h3>
+                <p><a href="your_cv_link" target="_blank">Download CV</a></p>
+            </div>
+            <div id="certificates">
+                <h3>Certificates</h3>
+                <p><a href="your_certificate_link" target="_blank">View Certificates</a></p>
+            </div>
+            <div id="projects">
+                <h3>Projects</h3>
+                <p><a href="your_project_link" target="_blank">View Projects</a></p>
             </div>
         </div>
     </div>
@@ -56,49 +85,6 @@
         </marquee>
     </div>
     <script>
-        document.getElementById('showRegisterForm').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('.login-form').style.display = 'none';
-            document.querySelector('.register-form').style.display = 'block';
-        });
-
-        document.getElementById('showLoginForm').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('.register-form').style.display = 'none';
-            document.querySelector('.login-form').style.display = 'block';
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const email = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            try {
-                const response = await fetch('http://backend:5000/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: email, password: password }),
-                });
-                
-                const data = await response.json();
-                if (response.ok) {
-                    console.log('Login successful:', data);
-                    // Redirect to dashboard or another page
-                    window.location.href = '/dashboard.html'; // example redirection
-                } else {
-                    console.error('Login error:', data);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        });
-
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add registration functionality here
-        });
-
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Add contact form functionality here
@@ -125,3 +111,4 @@
     </script>
 </body>
 </html>
+
