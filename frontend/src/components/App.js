@@ -24,10 +24,10 @@ function App() {
         setIsLoggedIn(true);
       } else {
         console.error('Login error:', data);
-        setError('Login failed');
+        setError('Login failed: ' + (data.message || 'Unknown error'));
       }
     } catch (err) {
-      setError('Login failed');
+      setError('Login failed: ' + err.message);
       console.error('Error:', err);
     }
   };
