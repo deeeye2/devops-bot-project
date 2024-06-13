@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #495867;
+    background: url('profile.png') no-repeat center center fixed; /* Set your background image here */
+    background-size: cover;
     color: #fff;
     margin: 0;
     padding: 0;
