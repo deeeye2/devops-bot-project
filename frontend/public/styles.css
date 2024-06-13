@@ -28,49 +28,86 @@ body {
     height: 50px;
 }
 
-.login-form {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.login-form h2, .login-form label, .login-form a {
-    color: green;
-}
-
-.content {
+.navbar {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 20px;
+    align-items: center;
 }
 
-.logo {
-    flex: 1;
-    text-align: right;
+.navbar a, .dropbtn {
+    margin-left: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bio-section {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.bio-photo {
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.bio-text {
+    max-width: 600px;
+}
+
+.portfolio {
+    margin: 20px;
     width: 80%;
 }
 
-.logo img {
-    width: 40%;
-    height: auto;
+.portfolio h2 {
+    text-align: center;
 }
 
-.form-container {
-    flex: 1;
-    text-align: left;
+.portfolio div {
+    margin-bottom: 20px;
 }
 
-.register-form {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 5px;
-    
+.bottom-section, .time, .footer, .marquee {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.contact-form, .calendar, .time {
+.contact-form, .calendar {
     margin-top: 20px;
     padding: 20px;
     width: 80%;
@@ -141,21 +178,4 @@ body {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #222;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-form button:hover, .calendar button:hover {
-    background-color: #222;
-}
-
-.time {
-    text-align: center;
-    margin-top: 10px;
-    background-color: #BFA89E;
-    padding: 10px;
-    border-radius: 5px;
-    width: 200px;
-}
+    background
